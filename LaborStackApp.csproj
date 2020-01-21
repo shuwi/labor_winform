@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{939506ED-16AE-4A4C-9036-92B402316F53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LaborStackApp</RootNamespace>
+    <AssemblyName>LaborStackApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\ManagerInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\ManagerInfoForm.Designer.cs">
+      <DependentUpon>ManagerInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\TeamInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\TeamInfoForm.Designer.cs">
+      <DependentUpon>TeamInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\WorkerInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\WorkerInfoForm.Designer.cs">
+      <DependentUpon>WorkerInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LoginUser.cs" />
+    <Compile Include="Model\OrganizationProject.cs" />
+    <Compile Include="Model\ProjectWorker.cs" />
+    <Compile Include="Model\WorkerType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\ManagerAddRequestData.cs" />
+    <Compile Include="Request\WorkerAddRequestData.cs" />
+    <Compile Include="Response\CommonResponseData.cs" />
+    <Compile Include="Response\CultureLevelType.cs" />
+    <Compile Include="Response\IDCardReaderResponse.cs" />
+    <Compile Include="Response\IDCardReaderUserInfo.cs" />
+    <Compile Include="Response\LoginResponse.cs" />
+    <Compile Include="Response\LoginResponseData.cs" />
+    <Compile Include="Response\ManagerListData.cs" />
+    <Compile Include="Response\ManagersResponse.cs" />
+    <Compile Include="Response\Nation.cs" />
+    <Compile Include="Response\ProjectInfo.cs" />
+    <Compile Include="Response\ProjectsResponseData.cs" />
+    <Compile Include="Response\TeamData.cs" />
+    <Compile Include="Response\TeamDataResponse.cs" />
+    <Compile Include="Response\UserInfo.cs" />
+    <Compile Include="Response\WorkerListData.cs" />
+    <Compile Include="Response\WorkerListResponse.cs" />
+    <Compile Include="Response\WorkerListResponseData.cs" />
+    <Compile Include="Response\WorkersResponse.cs" />
+    <Compile Include="Response\WorkerType.cs" />
+    <Compile Include="SDK\LibClass.cs" />
+    <Compile Include="SDK\ReaderLib.cs" />
+    <Compile Include="SDK\UserInfo.cs" />
+    <Compile Include="Service\Inter\LaborServiceInterface.cs" />
+    <Compile Include="Service\LoginUserService.cs" />
+    <Compile Include="Service\net\ManagerRequestService.cs" />
+    <Compile Include="Service\net\ProjectsResponseService.cs" />
+    <Compile Include="Service\net\TeamRequestService.cs" />
+    <Compile Include="Service\net\WorkerRequestService.cs" />
+    <Compile Include="Toolkits\Common.cs" />
+    <Compile Include="Toolkits\PageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Toolkits\PageUserControl.Designer.cs">
+      <DependentUpon>PageUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\ManagerInfoForm.resx">
+      <DependentUpon>ManagerInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\TeamInfoForm.resx">
+      <DependentUpon>TeamInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\WorkerInfoForm.resx">
+      <DependentUpon>WorkerInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Toolkits\PageUserControl.resx">
+      <DependentUpon>PageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AForge">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="AForge.Controls">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="AForge.Imaging">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="AForge.Video">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="AForge.Video.DirectShow">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="Flurl.Http">
+      <Version>2.4.2</Version>
+    </PackageReference>
+    <PackageReference Include="log4net">
+      <Version>2.0.8</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
